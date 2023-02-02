@@ -1,6 +1,7 @@
-import Menu from 'components/Menu';
 import cardapio from 'data/cardapio.json';
 import styles from './Inicio.module.scss';
+import stylesTema from '../../styles/Tema.module.scss';
+import nossaCasa from 'assets/nossa_casa.png';
 
 export default function Inicio() {
   let pratosRecomendados  = [...cardapio];
@@ -8,8 +9,7 @@ export default function Inicio() {
 
   return (
     <section>
-      <Menu/>
-      <h3 className={styles.titulo}>
+      <h3 className={stylesTema.titulo}>
         Recomendações da Cozinha
       </h3>
       <div className={styles.recomendados}>
@@ -23,6 +23,13 @@ export default function Inicio() {
             </button>
           </div>
         ))}
+      </div>
+      <h3 className={stylesTema.titulo}> Nossa Casa </h3>
+      <div className={styles.nossaCasa}>
+          <img src={nossaCasa} alt='Casa do Aluroni'/>
+          <div className={styles.nossaCasa__endereco}>
+              Rua Vergueiro, 3185 <b/> <b/> Coração de Jesus - Sobral
+          </div>
       </div>
     </section>
   )
